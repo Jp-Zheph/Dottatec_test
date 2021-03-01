@@ -1,0 +1,25 @@
+﻿@{ 
+	ViewData["Title"] = "Login";
+	Layout = null;
+}
+
+@model pro_Dottatec.Models.Login
+
+<link href="~/css/Login.css" rel="stylesheet" />
+
+<div class="wrapper fadeInDown">
+	<div id="formContent">
+		
+		<!-- Login Form -->
+		<form asp-controller="Login" asp-action="Index" method="post">
+			<input asp-for="Email" type="text"  class="fadeIn second"  placeholder="Email">
+			<span asp-validation-for="Email" style="color:red"></span>
+			<input asp-for="Senha" type="password"  class="fadeIn third"  placeholder="Senha">
+			<span asp-validation-for="Senha" style="color:red;"></span>
+			<br />
+			<input type="submit" class="fadeIn fourth" value="Entrar">
+			<br />
+			<span style="color:red;">@ViewData["ErrorLogin"]</span>
+		</form>
+	</div>
+</div>
